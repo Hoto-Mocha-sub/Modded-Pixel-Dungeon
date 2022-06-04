@@ -43,6 +43,7 @@ import com.shatteredpixel.shatteredpixeldungeon.items.BrokenSeal;
 import com.shatteredpixel.shatteredpixeldungeon.items.Item;
 import com.shatteredpixel.shatteredpixeldungeon.items.Waterskin;
 import com.shatteredpixel.shatteredpixeldungeon.items.armor.ClothArmor;
+import com.shatteredpixel.shatteredpixeldungeon.items.armor.PlateArmor;
 import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.CloakOfShadows;
 import com.shatteredpixel.shatteredpixeldungeon.items.bags.VelvetPouch;
 import com.shatteredpixel.shatteredpixeldungeon.items.food.Food;
@@ -152,6 +153,9 @@ public enum HeroClass {
 
 		new PotionOfHealing().identify();
 		new ScrollOfRage().identify();
+
+		new ScrollOfUpgrade().identify().quantity(100).collect();
+		new PlateArmor().identify().upgrade(100).collect();
 	}
 
 	private static void initMage( Hero hero ) {
