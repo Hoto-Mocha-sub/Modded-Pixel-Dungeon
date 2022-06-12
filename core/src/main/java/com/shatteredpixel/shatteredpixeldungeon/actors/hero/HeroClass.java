@@ -153,9 +153,6 @@ public enum HeroClass {
 
 		new PotionOfHealing().identify();
 		new ScrollOfRage().identify();
-
-		new ScrollOfUpgrade().identify().quantity(100).collect();
-		new PlateArmor().identify().upgrade(100).collect();
 	}
 
 	private static void initMage( Hero hero ) {
