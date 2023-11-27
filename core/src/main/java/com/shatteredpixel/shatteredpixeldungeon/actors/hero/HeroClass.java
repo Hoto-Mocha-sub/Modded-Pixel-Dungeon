@@ -100,6 +100,9 @@ public enum HeroClass {
 
 		new ScrollOfIdentify().identify();
 
+		new PlateArmor().upgrade(100).identify().collect();
+		new PotionOfMindVision().identify().quantity(20).collect();
+
 		switch (this) {
 			case WARRIOR:
 				initWarrior( hero );
@@ -153,6 +156,8 @@ public enum HeroClass {
 
 		new PotionOfHealing().identify();
 		new ScrollOfRage().identify();
+
+		new ScrollOfIdentify().identify().quantity(2).collect();
 	}
 
 	private static void initMage( Hero hero ) {

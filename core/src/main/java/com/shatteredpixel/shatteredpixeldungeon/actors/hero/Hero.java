@@ -418,13 +418,20 @@ public class Hero extends Char {
 	
 	public int tier() {
 		Armor armor = belongings.armor();
+		Buff buff = buff(MindVision.class);
+		int tier;
 		if (armor instanceof ClassArmor){
-			return 6;
+			tier = 6;
 		} else if (armor != null){
-			return armor.tier;
+			tier = armor.tier;
 		} else {
-			return 0;
+			tier = 0;
 		}
+		//if (buff != null) {
+		//	tier += 7;
+		//}
+		//((HeroSprite)this.sprite).updateArmor();
+		return tier;
 	}
 	
 	public boolean shoot( Char enemy, MissileWeapon wep ) {

@@ -26,8 +26,10 @@ import com.watabou.noosa.TextureFilm;
 
 public class ItemSpriteSheet {
 
-	private static final int WIDTH = 16;
-	public static final int SIZE = 16;
+	private static final int scale = 4;
+
+	private static final int WIDTH = 16*scale;
+	public static final int SIZE = 16*scale;
 
 	public static TextureFilm film = new TextureFilm( Assets.Sprites.ITEMS, SIZE, SIZE );
 
@@ -39,7 +41,7 @@ public class ItemSpriteSheet {
 	private static void assignItemRect( int item, int width, int height ){
 		int x = (item % WIDTH) * SIZE;
 		int y = (item / WIDTH) * SIZE;
-		film.add( item, x, y, x+width, y+height);
+		film.add( item, x, y, x+width*scale, y+height*scale);
 	}
 
 	private static final int PLACEHOLDERS   =                               xy(1, 1);   //16 slots
@@ -207,7 +209,7 @@ public class ItemSpriteSheet {
 	public static final int DAGGER          = WEP_TIER1+4;
 	public static final int MAGES_STAFF     = WEP_TIER1+5;
 	static{
-		assignItemRect(WORN_SHORTSWORD, 13, 13);
+		assignItemRect(WORN_SHORTSWORD, 16, 16);
 		assignItemRect(GLOVES,          12, 16);
 		assignItemRect(DAGGER,          12, 13);
 		assignItemRect(MAGES_STAFF,     15, 16);
@@ -695,9 +697,7 @@ public class ItemSpriteSheet {
 		assignItemRect(BANDOLIER,   15, 16);
 		assignItemRect(HOLSTER,     15, 16);
 		assignItemRect(VIAL,        12, 12);
-	}
-
-	                                                                                    //16 free slots
+	}	                                                                                    //16 free slots
 
 	//for smaller 8x8 icons that often accompany an item sprite
 	public static class Icons {
